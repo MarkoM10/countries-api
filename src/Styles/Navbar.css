@@ -1,0 +1,28 @@
+.nav{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    box-shadow: 5px 5px 8px #ebebeb;
+}
+.nav a{
+    text-decoration: none;
+    color: var(--VeryDarkBlueLight);
+    font-weight: 900;
+}
+nav img{
+    width: 20px;
+    cursor: pointer;
+}
+.nav div:first-child{
+    margin-left: 8%;
+}
+.nav div:nth-child(2){
+    justify-self: flex-end;
+    margin-right: 11%;
+    font-weight: 700;
+    display: flex;
+}
+.nav div:nth-child(2) label{
+    margin-left: 10px;
+}
