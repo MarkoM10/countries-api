@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
         <nav className='nav'>
           <div>
-            <a href=''><h1>Where in the world?</h1></a>
+            <a href='/'><h1>Where in the world?</h1></a>
           </div>
           <div>
             <img src={moon}/><label>Dark Mode</label>

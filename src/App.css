@@ -15,5 +15,5 @@
 }
 .main-wrapper{
     display: grid;
-    grid-template-rows: 8vh 92vh;
+    grid-template-rows: 8vh 12vh 80vh;
 }
