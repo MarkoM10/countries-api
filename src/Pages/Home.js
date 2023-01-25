@@ -11,7 +11,9 @@ const Home = () => {
     
         const[countries,setCountries] = useState([]);
         const context = useContext(Context);
+        const region = context.region;
         const searchTerm = context.searchTerm;   
+        
 
 
         useEffect(()=>{
@@ -19,7 +21,7 @@ const Home = () => {
             .then(res=>{
                 let countriesCopy = [...res.data];
                 let filteredData = searchTerm ? countriesCopy.filter((country)=>country.name.common.toLowerCase().includes(searchTerm.toLowerCase())): countriesCopy;
-                console.log(res);
+                // console.log(res);
                 setCountries(filteredData)
             }).catch(err=>{
                 console.log(err)
@@ -32,6 +34,17 @@ const Home = () => {
             navigate(`${countryName}`);
         }
 
+        useEffect(()=>{
+            if(region===region){
+                axios.get(`https://restcountries.com/v3.1/region/${region}`).
+                then(res=>{
+                    console.log(res);
+                    setCountries(res.data)
+                }).catch(err=>{
+                    console.log(err);
+                })
+            }    
+        },[region])
 
         console.log(countries)
         

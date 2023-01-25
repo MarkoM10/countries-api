@@ -1,0 +1,11 @@
+select#region {
+    padding: 15px 30px;
+    border: none;
+    box-shadow: 5px 5px 8px #ebebeb;
+}
+.region-box {
+    align-self: center;
+    justify-self: end;
+    margin-right: 110px;
+    margin-top: 50px;
+}

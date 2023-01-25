@@ -1,18 +1,21 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react'
+import { useFetcher, useParams } from 'react-router-dom';
 import Context from '../Components/Context';
 import "../Styles/CountryInfo.css"
-import back from "../Images/left-arrow.png"
 import { Link } from 'react-router-dom';
 
 const CountryInfo = () => {
 
     const {name} = useParams();
-
+    const context = useContext(Context);
+    const arrow = context.arrow;
 
     const[country,setCountry] = useState({});
     const[isLoading,setIsLoading] = useState(false);
+    const[borders,setBorders] = useState(false);
+    
+    
 
     
     useEffect(()=>{
@@ -25,33 +28,28 @@ const CountryInfo = () => {
             })
     },[name])
 
-    // useEffect(()=>{
-    //       async function getCountry(){
-    //         try{
-    //           const res = await axios.get(`https://restcountries.com/v3.1/name/${name}`);
-    //           console.log(res);
-    //           setCountry(res.data[0]);
-    //         }catch(error){
-    //           console.error(error);
-    //         }
-    //       }
-    //       getCountry();
-    // },[])
 
-    console.log(country)
+  useEffect(()=>{
+    if(isLoading){
+        if("borders" in country){
+          setBorders(true);
+        }
+    }else{
+      console.log("error")
+    } 
+  },[borders])
 
-
-
-
+  console.log(country)
+  console.log(borders)
 
   return (
     <div>
       {isLoading?(
             <div className='country-grid'>
               <div className='image-grid'>
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/" className='link-style'>
                   <div className='back-btn'>
-                    <img className='back-icon' src={back}/>
+                    <img className='back-icon' src={arrow}/>
                     <label>Back</label>
                   </div>
                 </Link>

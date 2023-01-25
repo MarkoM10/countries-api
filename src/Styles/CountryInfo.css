@@ -51,6 +51,10 @@
     font-weight: 800;
     font-family: 'Nunito Sans', sans-serif;
 }
+.link-style{
+    text-decoration: none;
+    color: black;
+}
 .left-side-info span {
         font-weight: 700;
 }
