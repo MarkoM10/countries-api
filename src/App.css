@@ -16,18 +16,21 @@
 .main-wrapper{
     display: grid;
     grid-template-rows: 8vh 12vh 80vh;
+    overflow-x: hidden;
 }
 .main-wrapper-dark{
     display: grid;
     grid-template-rows: 8vh 12vh 80vh;
-    background-color: var(--DarkBlue);
+    background-color: var(--VeryDarkBlue);
     color: white;
+    overflow-x: hidden;
 }
 .main-wrapper-dark h1{
     color: white;
 }
 .main-wrapper-dark .country-card{
     box-shadow: 5px 5px 30px #1b1b1b;
+    background-color: var( --DarkBlue);
 }
 
 .main-wrapper-dark .nav {
@@ -37,6 +40,7 @@
     align-items: center;
     /* box-shadow: 5px 5px 8px #ebebeb; */
     box-shadow: 5px 5px 8px #1b1b1b;
+    background-color: var( --DarkBlue);
 }
 .main-wrapper-dark select#region {
     padding: 15px 30px;
@@ -55,6 +59,7 @@
     box-shadow: 5px 5px 8px #1b1b1b;
     margin-top: 75px;
     margin-bottom: 30px;
+    background-color: var( --DarkBlue);
 }
 .main-wrapper-dark .border-country-btn {
     padding-left: 20px;
@@ -72,6 +77,8 @@
     box-shadow: 5px 5px 8px #1b1b1b;
     background-color: var(--DarkBlue);
     color: white;
+    font-size: 15px;
+
 }
 .main-wrapper-dark #myInput {
     background-position: 10px 12px;

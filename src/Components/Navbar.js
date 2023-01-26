@@ -1,27 +1,29 @@
 import React, { useContext, useState } from 'react'
 import "../Styles/Navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import moon from "../Images/moon.png"
-import moonDark from "../Images/moonDark.png"
 import leftArrrowDark from  "../Images/left-arrow-dark.png"
 import Context from './Context'
 import { Link } from 'react-router-dom'
+import { faMoon } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const Navbar = () => {
 
   const context = useContext(Context);
-  const setThemeColor = context.setThemeColor;
+  const setTheme = context.setTheme;
+  const theme = context.theme;
   const setArrow = context.setArrow;
-  const[moonImg,setMoonImg] = useState(moon);
-  const [status, setStatus] = useState(false);
+  const setThemeColorText = context.setThemeColorText;
+  const themeColorText = context.themeColorText;
+  
 
-  const changeTheme = () =>{
-    setStatus(!status);
-    setThemeColor("main-wrapper-dark");
-    setMoonImg(moonDark);
-    setArrow(leftArrrowDark);
 
+  const toggleTheme = ()=>{
+    setTheme((curr)=>(curr == 'main-wrapper'? "main-wrapper-dark":"main-wrapper"));
+    setThemeColorText((curr)=>(curr=='Light'? "Dark": "Light"));
   }
+
 
 
   return (
@@ -30,7 +32,7 @@ const Navbar = () => {
             <Link to="/"><h1>Where in the world?</h1></Link>
           </div>
           <div>
-            <img src={moonImg} onClick={()=>changeTheme()}/><label>Dark Mode</label>
+            <FontAwesomeIcon className='moon' icon={faMoon} onClick={()=>toggleTheme()} /><label className='theme-color-text' onClick={()=>toggleTheme()}>{themeColorText} Mode</label>
           </div>
         </nav>
   )

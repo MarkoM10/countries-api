@@ -4,6 +4,9 @@ import { useFetcher, useParams } from 'react-router-dom';
 import Context from '../Components/Context';
 import "../Styles/CountryInfo.css"
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Spinner from '../Components/Spinner';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 
 const CountryInfo = () => {
 
@@ -13,7 +16,7 @@ const CountryInfo = () => {
 
     const[country,setCountry] = useState({});
     const[isLoading,setIsLoading] = useState(false);
-    const[borders,setBorders] = useState(false);
+    // const[borders,setBorders] = useState(false);
     
     
 
@@ -29,27 +32,26 @@ const CountryInfo = () => {
     },[name])
 
 
-  useEffect(()=>{
-    if(isLoading){
-        if("borders" in country){
-          setBorders(true);
-        }
-    }else{
-      console.log("error")
-    } 
-  },[borders])
+  // useEffect(()=>{
+  //   if(isLoading){
+  //       if("borders" in country){
+  //         setBorders(true);
+  //       }
+  //   }else{
+  //     console.log("error")
+  //   } 
+  // },[borders])
 
-  console.log(country)
-  console.log(borders)
+  
 
   return (
-    <div>
+    <div className='country-info-main'>
       {isLoading?(
             <div className='country-grid'>
               <div className='image-grid'>
                 <Link to="/" className='link-style'>
                   <div className='back-btn'>
-                    <img className='back-icon' src={arrow}/>
+                    <FontAwesomeIcon className="back-icon" icon={faArrowLeftLong} />
                     <label>Back</label>
                   </div>
                 </Link>
@@ -69,17 +71,17 @@ const CountryInfo = () => {
                   {/* <label><span>Currencies: </span>{country.currencies.EUR.name}</label> */}
                   <label><span>Lanugages: </span>{Object.values(country.languages)+" "}</label>
                 </div>
-                <div className='border-country'>
+                {/* <div className='border-country'>
                   <label>Border countries: </label>
                   {country.borders.map(border=>
                     <div className='border-country-btn'>{border}</div>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           )
           :(
-            <label>loading...</label>
+            <Spinner/>
           )
       }
     </div>

@@ -3,25 +3,26 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    box-shadow: 5px 5px 8px #ebebeb;
+    box-shadow: 5px 5px 20px 2px #f0f0f0;
 }
 .nav a{
     text-decoration: none;
     color: var(--VeryDarkBlueLight);
     font-weight: 900;
 }
-nav img{
-    width: 20px;
+.moon{
+    cursor: pointer;
+}
+.theme-color-text{
     cursor: pointer;
 }
 .nav div:first-child{
     margin-left: 8%;
 }
-.nav div:nth-child(2){
+.nav div:nth-child(2) {
     justify-self: flex-end;
     margin-right: 11%;
     font-weight: 700;
-    display: flex;
 }
 .nav div:nth-child(2) label{
     margin-left: 10px;
