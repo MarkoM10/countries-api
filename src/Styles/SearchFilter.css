@@ -1,14 +1,13 @@
 #myInput {
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 50%;
+  width: 65%;
   font-size: 15px;
   padding: 15px 20px 15px 40px;
-  /* border: 1px solid #ddd; */
   border: none;
   border-radius: 5px;
-  margin-bottom: 12px;
-  margin-left: 90px;
   margin-top: 50px;
   box-shadow: 5px 5px 20px 5px #f0f0f0;
+  margin: 0 2rem;
+}
+.search-box {
+  align-self: center;
 }

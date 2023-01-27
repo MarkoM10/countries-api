@@ -5,9 +5,16 @@ select#region {
     border-radius: 5px;
     font-size: 15px;
 }
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../Images/down.png") 93% / 12% no-repeat;
+}
 .region-box {
+    height: 100%;
     align-self: center;
     justify-self: end;
-    margin-right: 100px;
+    margin-right: 2rem;
     margin-top: 50px;
 }

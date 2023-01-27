@@ -2,20 +2,28 @@
 img{
     max-width: 100%;
 }
-.main{
+.home-wrapper {
+    display: grid;
+    width: 1440px;
+    justify-self: center;
+    grid-template-rows: 0.1fr 0.9fr;
+}
+.main {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     justify-items: center;
     /* margin-bottom: 50px; */
-    align-items: center;
+    /* align-items: center; */
 }
 .filters-box{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: end;
+    margin: 2rem 0;
 }
 .country-card{
     display: grid;
-    margin-top: 2rem;
+    margin: 0 2rem 2rem 2rem;
     grid-template-rows: 0.45fr 0.55fr;
     font-size:18px;
     box-shadow: 5px 5px 20px 5px #f0f0f0;

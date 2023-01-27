@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import down from "../Images/down-arrow.png"
 import "../Styles/RegionFilter.css"
 import Context from './Context'
 
