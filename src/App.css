@@ -103,3 +103,125 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+@media only screen and (max-width: 1440px) {
+    .main {
+        grid-template-columns: repeat(3,1fr) !important;
+    }
+
+  }
+@media only screen and (max-width: 1260px) {
+    .country-grid {
+        /* grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr !important; */
+
+    }
+  }
+  @media only screen and (max-width:1080px ) {
+    .main {
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    
+  }
+  @media only screen and (max-width:1000px ) {
+    .left-side-info label:first-child{
+        font-size: 24px !important;
+    }
+    .left-side-info label:nth-child(2){
+        font-size: 16px !important;
+    }
+    .left-side-info label:nth-child(3){
+        font-size: 16px !important;
+    }
+    .left-side-info label:nth-child(4){
+        font-size: 16px !important;
+    }
+    .left-side-info label:nth-child(5){
+        font-size: 16px !important;
+    }
+    .left-side-info label:nth-child(6){
+        font-size: 16px !important;
+    }
+    
+  }
+  @media only screen and (max-width:900px ) {
+    .country-grid {
+        grid-template-columns: 1fr !important;
+    }    
+  }
+
+  @media only screen and (max-width:700px ) {
+    .main {
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    .country-card {
+        width: 400px !important;
+    }
+    .filters-box {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+        align-items: center !important;
+        justify-items: center !important;
+    }
+    .region-box {
+        justify-self: center !important;
+    }
+    .main-wrapper-dark #myInput {
+        width: 100% !important;
+        background-color: var(--DarkBlue);
+        color: white;
+        border: none;
+        box-shadow: 5px 5px 8px #1b1b1b;
+    }
+    .main-wrapper #myInput {
+        width: 100% !important;
+    }
+    .search-box {
+        width: 100% !important;
+        margin: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+    #myInput {
+        margin: 0 !important;
+    }
+    .region-box {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .main-wrapper-dark select#region {
+        padding: 15px 30px;
+        border: none;
+        box-shadow: 5px 5px 8px #1b1b1b;
+        background-color: var(--DarkBlue);
+        color: white;
+        font-size: 15px;
+        width: 100%;
+    }
+    .main-wrapper select#region {
+        width: 100% !important;
+    }
+    .main-wrapper-dark select{
+            background: url("../src/Images/down-dark.png") 93% / 6% no-repeat !important;
+            background-color: var(--DarkBlue) !important;
+    }
+    .main-wrapper select{
+            background: url("../src/Images/down.png") 93% / 6% no-repeat !important;
+    }
+    .image-grid {
+        margin-bottom: 2rem !important;
+    }
+  }
+  @media only screen and (max-width:500px ) {
+    .nav h1{
+        font-size: 20px;
+    }
+    
+  }
+  @media only screen and (max-width:460px ) {
+    .country-card {
+        width: 300px !important;
+    }
+    
+    .nav h1{
+        font-size: 16px;
+    }
+  }

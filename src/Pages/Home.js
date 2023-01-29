@@ -51,7 +51,9 @@ const Home = () => {
             }    
         },[region])
 
-        console.log(countries)
+        if(countries===[]){
+            
+        }
         
     
   return (

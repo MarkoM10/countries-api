@@ -4,7 +4,7 @@ img{
 }
 .home-wrapper {
     display: grid;
-    width: 1440px;
+    max-width: 1440px;
     justify-self: center;
     grid-template-rows: 0.1fr 0.9fr;
 }
