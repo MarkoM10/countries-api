@@ -64,8 +64,6 @@
     justify-content: center;
     flex-wrap: wrap;
     box-shadow: 5px 5px 8px #1b1b1b;
-    margin-top: 75px;
-    margin-bottom: 30px;
     background-color: var( --DarkBlue);
 }
 .main-wrapper-dark .border-country-btn {
@@ -141,12 +139,27 @@
     .left-side-info label:nth-child(6){
         font-size: 16px !important;
     }
+    .right-side-info {
+        font-size: 16px !important;
+    }
+    .country-info-grid {
+        grid-template-rows: 0.05fr 0.95fr !important;
+    }
+    .left-side-info label:first-child {
+        margin-top: 1.5rem !important;
+    }
     
   }
   @media only screen and (max-width:900px ) {
     .country-grid {
         grid-template-columns: 1fr !important;
-    }    
+    } 
+    .country-info-img {
+        height: 100% !important;
+    }
+    .left-side-info label:first-child {
+        margin-top: 1.5rem !important;
+    }   
   }
 
   @media only screen and (max-width:700px ) {
@@ -154,7 +167,8 @@
         grid-template-columns: repeat(1,1fr) !important;
     }
     .country-card {
-        width: 400px !important;
+        margin: 0 0 2rem 0 !important;
+        width: 450px !important;
     }
     .filters-box {
         grid-template-columns: 1fr !important;
@@ -209,7 +223,18 @@
     .image-grid {
         margin-bottom: 2rem !important;
     }
+    .left-side-info label:first-child {
+        margin-top: 1.5rem !important;
+    }
+    .country-info-grid {
+        grid-template-rows: 0.05fr 0.95fr !important;
+    }
+    .country-info-grid {
+        justify-self: center !important;
+        width: 100% !important;
+    }   
   }
+
   @media only screen and (max-width:500px ) {
     .nav h1{
         font-size: 20px;
@@ -218,7 +243,10 @@
   }
   @media only screen and (max-width:460px ) {
     .country-card {
-        width: 300px !important;
+        width: 350px !important;
+    }
+    .info-box {
+        margin: 0 5% !important;
     }
     
     .nav h1{

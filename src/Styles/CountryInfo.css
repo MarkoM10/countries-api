@@ -3,14 +3,22 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
 }
-.country-info-img{
-    max-width: 600px;
-    max-height: 400px;
-    width: 90%;
-    height: 80%;
-    margin-top: 50px;
-    margin-left: 2%;
-    margin-right: 2%;
+.back {
+    align-self: center;
+    margin: 5% 0;
+}
+.image-grid {
+    grid-template-rows: 0.1fr 0.9fr;
+    display: grid;
+    margin: 5% 5% 0 5%;
+}
+.country-info-img {
+    justify-self: center;
+    width: 700px;
+    height: 500px;
+    /* margin-top: 50px; */
+    /* margin-left: 2%; */
+    /* margin-right: 2%; */
 }
 .back-icon{
     width: 20px;
@@ -33,25 +41,26 @@
     justify-content: center;
     flex-wrap: wrap;
     box-shadow: 5px 5px 20px 5px #f0f0f0;
-    margin-top: 75px;
-    margin-bottom: 30px;
-    margin-left: 2%;
 }
 .back-btn label{
     padding-left: 5px;
 }
 .country-info-main {
+    display: grid;
     max-width: 1440px;
     justify-self: center;
 }
 .country-info-grid{
-    margin-top: 8rem;
+    grid-template-rows: 0.2fr 0.8fr;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-self: center;
     width: 80%;
 }
+.info-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 .left-side-info label:first-child{
+    margin-top: 3.3rem;
     font-size: 32px;
     font-weight: 800;
     font-family: 'Nunito Sans', sans-serif;
@@ -68,21 +77,28 @@
 }
 .left-side-info label:nth-child(2){
     margin-top: 20px;
+    font-size: 18px;
 }
 .left-side-info label:nth-child(3){
     margin-top: 10px;
+    font-size: 18px;
 }
 .left-side-info label:nth-child(4){
     margin-top: 10px;
+    font-size: 18px;
 }
 .left-side-info label:nth-child(5){
     margin-top: 10px;
+    font-size: 18px;
 }
 .left-side-info label:nth-child(6){
     margin-top: 10px;
+    font-size: 18px;
 }
 .right-side-info {
-    margin-top: 56px;
+    margin-top: 3.9rem;
+    justify-self: center;
+    font-size: 18px;
 }
 .right-side-info span{
     font-weight: 700;
@@ -108,4 +124,7 @@
     justify-content: center;
     flex-wrap: wrap;
     box-shadow: 5px 5px 8px 2px #a0a0a0;
+}
+.languages{
+    margin-top: 10px;
 }
