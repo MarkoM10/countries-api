@@ -25,8 +25,6 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  console.log(theme);
-
   return (
     <nav className="nav">
       <div onClick={() => navigate("/")}>

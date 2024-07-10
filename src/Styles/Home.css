@@ -18,9 +18,15 @@ img {
 }
 .filters-box {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: end;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   margin: 2rem 0;
+}
+.favorites-box {
+  justify-self: center;
+}
+.favorites-box label {
+  cursor: pointer;
 }
 .country-card {
   display: grid;
@@ -32,9 +38,15 @@ img {
   /* padding: 0 20px 0 20px; */
   width: 90%;
   height: 350px;
-  cursor: pointer;
+}
+.favoritesIcon {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 2rem;
 }
 .country-img img {
+  cursor: pointer;
   width: 100%;
   border-radius: 5px 5px 0px 0px;
   height: 150px;

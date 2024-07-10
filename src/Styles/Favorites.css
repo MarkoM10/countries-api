@@ -1,0 +1,21 @@
+.favorites {
+  margin-top: 2rem;
+}
+.favorites > label {
+  margin-left: 4rem;
+}
+.favoritesWrapper {
+  margin: 2rem 0 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.favorite-card {
+  display: grid;
+  margin: 0 2rem 2rem 2rem;
+  grid-template-rows: 0.45fr 0.55fr;
+  font-size: 18px;
+  box-shadow: 5px 5px 20px 5px #f0f0f0;
+  border-radius: 5px;
+  width: 300px;
+  height: 350px;
+}

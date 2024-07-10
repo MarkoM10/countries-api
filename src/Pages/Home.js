@@ -7,16 +7,22 @@ import Context from "../Components/Context";
 import SearchFilter from "../Components/SearchFilter";
 import Spinner from "../Components/Spinner";
 import RegionFilter from "../Components/RegionFilter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [countries, setCountries] = useState([]);
   const context = useContext(Context);
+  const favorites = context.favorites;
+  const setFavorites = context.setFavorites;
   const region = context.region;
   const searchTerm = context.searchTerm;
   const [isLoading, setIsLoading] = useState(false);
   let REGION_URL = "https://restcountries.com/v3.1";
   const [currentPage, setCurrentPage] = useState(1);
-  const countriesPerPage = 24; // Number of countries per page
+  const countriesPerPage = 24;
 
   useEffect(() => {
     axios
@@ -42,7 +48,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const openCountryInfo = (countryName) => {
-    navigate(`${countryName}`);
+    navigate(`/country/${countryName}`);
   };
 
   useEffect(() => {
@@ -72,21 +78,41 @@ const Home = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const favoritesCountry = (country) => {
+    setFavorites((prevFavorites) => {
+      if (prevFavorites.some((fav) => fav.cca2 === country.cca2)) {
+        return prevFavorites.filter((fav) => fav.cca2 !== country.cca2);
+      } else {
+        return [...prevFavorites, country];
+      }
+    });
+  };
+
+  console.log(favorites);
+
   return (
     <div className="home-wrapper">
       <div className="filters-box">
         <SearchFilter />
+        <div className="favorites-box" onClick={() => navigate("favorites")}>
+          <label>
+            OMILJENE
+            <span>
+              {" "}
+              <FontAwesomeIcon icon={faGlobe} />
+            </span>
+          </label>
+        </div>
         <RegionFilter />
       </div>
       <div className="main">
         {isLoading ? (
           currentCountries.map((country) => (
-            <div
-              key={country.cca2}
-              className="country-card"
-              onClick={() => openCountryInfo(country.name.common)}
-            >
-              <div className="country-img">
+            <div key={country.cca2} className="country-card">
+              <div
+                className="country-img"
+                onClick={() => openCountryInfo(country.name.common)}
+              >
                 <img src={country.flags.svg} />
               </div>
               <div className="country-info">
@@ -96,6 +122,17 @@ const Home = () => {
                 <label>Populacija: {country.population}</label>
                 <label>Region: {country.region}</label>
                 <label>Glavni grad: {country.capital}</label>
+              </div>
+              <div className="favoritesIcon">
+                <FontAwesomeIcon
+                  style={{ cursor: "pointer" }}
+                  icon={
+                    favorites.some((fav) => fav.cca2 === country.cca2)
+                      ? fasHeart
+                      : farHeart
+                  }
+                  onClick={() => favoritesCountry(country)}
+                />
               </div>
             </div>
           ))

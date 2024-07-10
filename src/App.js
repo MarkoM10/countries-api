@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
-import CountryInfo from "./Pages/SingleCountry";
+import SingleCountry from "./Pages/SingleCountry";
 import {
   BrowserRouter,
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 import Context from "./Components/Context";
 import leftArrow from "../src/Images/left-arrow.png";
+import Favorites from "./Pages/Favorites";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,6 +19,7 @@ function App() {
   const [theme, setTheme] = useState("main-wrapper");
   const [arrow, setArrow] = useState(leftArrow);
   const [themeColorText, setThemeColorText] = useState("Svetli");
+  const [favorites, setFavorites] = useState([]);
 
   return (
     <div className={theme}>
@@ -34,12 +36,15 @@ function App() {
             theme,
             setThemeColorText,
             themeColorText,
+            favorites,
+            setFavorites,
           }}
         >
           <Navbar />
           <Routes>
             <Route path="/" index element={<Home />} />
-            <Route path=":name" element={<CountryInfo />} />
+            <Route path="/country/:name" element={<SingleCountry />} />
+            <Route path=":favorites" element={<Favorites />} />
           </Routes>
         </Context.Provider>
       </BrowserRouter>

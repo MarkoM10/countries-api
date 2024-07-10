@@ -32,6 +32,10 @@
   box-shadow: 5px 5px 30px #0f5d43;
   background-color: var(--darkGreen);
 }
+.main-wrapper-dark .favorite-card {
+  box-shadow: 5px 5px 30px #0f5d43;
+  background-color: var(--darkGreen);
+}
 
 .main-wrapper-dark .nav {
   width: 100vw;
@@ -124,15 +128,9 @@
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
-@media only screen and (max-width: 1260px) {
-  .country-grid {
-    /* grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr 1fr !important; */
-  }
-}
 @media only screen and (max-width: 1080px) {
   .main {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -178,9 +176,12 @@
 
 @media only screen and (max-width: 700px) {
   .main {
-    grid-template-columns: repeat(1, 1fr) !important;
+    width: 80% !important;
+    justify-items: unset !important;
   }
   .country-card {
+    justify-items: unset !important;
+    margin: 2rem !important;
   }
   .filters-box {
     grid-template-columns: 1fr !important;
@@ -190,28 +191,32 @@
   }
   .region-box {
     justify-self: center !important;
+    margin: 0 0 0 2rem !important;
+  }
+  .favorites-box {
+    justify-self: start !important;
+    margin-left: 1rem !important;
   }
   .main-wrapper-dark #myInput {
-    width: 100% !important;
+    width: 77% !important;
     background-color: var(--darkGreen);
     color: white;
     border: none;
     box-shadow: 5px 5px 8px #1b1b1b;
   }
   .main-wrapper #myInput {
-    width: 100% !important;
+    width: 77% !important;
   }
   .search-box {
     width: 100% !important;
     margin: 0 !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 0.5rem !important;
   }
   #myInput {
-    margin: 0 !important;
+    margin: 1rem !important;
   }
   .region-box {
     width: 100% !important;
-    margin: 0 !important;
   }
   .main-wrapper-dark select#region {
     padding: 15px 30px;
@@ -223,11 +228,13 @@
     width: 100%;
   }
   .main-wrapper select#region {
-    width: 100% !important;
+    width: 77% !important;
+    margin: 1rem;
   }
   .main-wrapper-dark select {
     background: url("../src/Images/down-dark.png") 93% / 6% no-repeat !important;
     background-color: var(--darkGreen) !important;
+    width: 77% !important;
   }
   .main-wrapper select {
     background: url("../src/Images/down.png") 93% / 6% no-repeat !important;
