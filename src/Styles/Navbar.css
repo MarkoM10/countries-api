@@ -1,29 +1,53 @@
-.nav{
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    box-shadow: 5px 5px 20px 2px #f0f0f0;
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+:root {
+  --darkGreen: #19a678;
+  --veryDarkGreen: #19a678;
+  --veryDarkGreenLight: hsl(200, 15%, 8%);
+  --DarkGray: hsl(0, 0%, 52%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
 }
-.nav a{
-    text-decoration: none;
-    color: var(--VeryDarkBlueLight);
-    font-weight: 900;
+.nav {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  box-shadow: 5px 5px 20px 2px #f0f0f0;
 }
-.moon{
-    cursor: pointer;
+.nav div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }
-.theme-color-text{
-    cursor: pointer;
+.nav div:first-child h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--darkGreen);
 }
-.nav div:first-child{
-    margin-left: 8%;
+.nav img {
+  width: 4rem;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--veryDarkGreenLight);
+  font-weight: 900;
+}
+.moon {
+  cursor: pointer;
+  color: var(--darkGreen);
+}
+.theme-color-text {
+  cursor: pointer;
+}
+.nav div:first-child {
+  margin-left: 8%;
 }
 .nav div:nth-child(2) {
-    justify-self: flex-end;
-    margin-right: 11%;
-    font-weight: 700;
+  justify-self: flex-end;
+  margin-right: 11%;
+  font-weight: 700;
 }
-.nav div:nth-child(2) label{
-    margin-left: 10px;
+.nav div:nth-child(2) label {
+  margin-left: 10px;
 }

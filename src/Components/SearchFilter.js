@@ -1,27 +1,26 @@
-import React, { useContext } from 'react'
-import "../Styles/SearchFilter.css"
-import Context from './Context';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import React, { useContext } from "react";
+import "../Styles/SearchFilter.css";
+import Context from "./Context";
 
 const SearchFilter = () => {
-    
-    const context = useContext(Context);
-    const setSearchTerm = context.setSearchTerm;
+  const context = useContext(Context);
+  const setSearchTerm = context.setSearchTerm;
 
-
-    const getSearchTerm = (e) =>{
-        setSearchTerm(e.target.value)
-    }
-
-
-
+  const getSearchTerm = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
-    <div className='search-box'>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for country..." onChange={(e)=>getSearchTerm(e)}></input>
+    <div className="search-box">
+      <input
+        type="text"
+        id="myInput"
+        onkeyup="myFunction()"
+        placeholder="Pretraži državu..."
+        onChange={(e) => getSearchTerm(e)}
+      ></input>
     </div>
-  )
-}
+  );
+};
 
-export default SearchFilter
+export default SearchFilter;
