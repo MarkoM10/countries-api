@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
     "gh-pages": "^5.0.0"
   }
 }

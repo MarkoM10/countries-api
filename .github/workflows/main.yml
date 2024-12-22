@@ -5,7 +5,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     env:
-      CI: false # Explicitly set CI to false for the entire job
+      CI: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -15,13 +15,13 @@ jobs:
           npm ci  # This installs your dependencies based on package-lock.json
 
       - name: Build app (disable CI warnings)
-        run: npm run build # Use npm to build the app instead of yarn
+        run: npm run build
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
           project: ./site
           browser: chrome
-          build: npm run build # Use npm to build the app for Cypress
-          start: npm start # Use npm to start the app for Cypress
+          build: npm run build --no-cache
+          start: npm start
           wait-on: "http://localhost:3000"
