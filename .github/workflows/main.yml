@@ -4,6 +4,8 @@ on: [push]
 jobs:
   install:
     runs-on: ubuntu-latest
+    env:
+      CI: false # Explicitly set CI to false for the entire job
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -14,7 +16,7 @@ jobs:
           yarn install
 
       - name: Build app (disable CI warnings)
-        run: CI=false yarn build
+        run: yarn build # CI=false is already set as an environment variable
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
