@@ -30,7 +30,6 @@ const Home = () => {
     axios
       .get("https://restcountries.com/v3.1/all")
       .then((res) => {
-        console.log("Resonse:", res);
         //Kreiranje kopije niza
         let countriesCopy = [...res.data];
         //Filtriranje niza ukoliko korisnik unese naziv drzave u okviru pretrage
@@ -66,7 +65,6 @@ const Home = () => {
     axios
       .get(`${REGION_URL}/${region}`)
       .then((res) => {
-        console.log(res);
         setCountries(res.data);
       })
       .catch((err) => {
