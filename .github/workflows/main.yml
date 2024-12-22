@@ -12,17 +12,16 @@ jobs:
 
       - name: Clean npm cache and install dependencies
         run: |
-          npm ci
-          yarn install
+          npm ci  # This installs your dependencies based on package-lock.json
 
       - name: Build app (disable CI warnings)
-        run: yarn build # CI=false is already set as an environment variable
+        run: npm run build # Use npm to build the app instead of yarn
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
           project: ./site
           browser: chrome
-          build: yarn build
-          start: yarn start
+          build: npm run build # Use npm to build the app for Cypress
+          start: npm start # Use npm to start the app for Cypress
           wait-on: "http://localhost:3000"
