@@ -12,8 +12,6 @@ export default function Favorites() {
     navigate(`/country/${countryName}`);
   };
 
-  console.log(favorites);
-
   return (
     <div className="favorites">
       {favorites.length > 0 ? (

@@ -13,8 +13,8 @@ import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
-  const [countries, setCountries] = useState([]);
   const context = useContext(Context);
+
   const favorites = context.favorites;
   const setFavorites = context.setFavorites;
   const region = context.region;
@@ -24,11 +24,16 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const countriesPerPage = 24;
 
+  const [countries, setCountries] = useState([]);
+  //Get request ka REST COUNTRIES API za prikupljanje svih podataka o drzavama
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
       .then((res) => {
+        console.log("Resonse:", res);
+        //Kreiranje kopije niza
         let countriesCopy = [...res.data];
+        //Filtriranje niza ukoliko korisnik unese naziv drzave u okviru pretrage
         let filteredData = searchTerm
           ? countriesCopy.filter((country) =>
               country.translations.hrv?.common
@@ -36,7 +41,9 @@ const Home = () => {
                 .includes(searchTerm.toLowerCase())
             )
           : countriesCopy;
-        console.log(res);
+
+        //Filter u JS funkcionise tako sto vraca novi niz koji je ispunio zadati uslov, u ovom slucaju uslov je bio da vrati sve drzave ciji naziv se poklapa sa unetim
+        //ukoliko korisnik nije uneo search term, znaci da treba da vratimo celu listu drzava
         setCountries(filteredData);
         setIsLoading(true);
       })
@@ -51,8 +58,8 @@ const Home = () => {
     navigate(`/country/${countryName}`);
   };
 
+  //Get request koji vraca listu drzava iz odabranih regiona u okviru regionFilter komponente
   useEffect(() => {
-    console.log(region);
     if (region != "all") {
       REGION_URL = REGION_URL + "/region";
     }
@@ -78,17 +85,17 @@ const Home = () => {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  //Funkcija zaduzena za kreiranje liste od odabranih omiljenih drzava
   const favoritesCountry = (country) => {
     setFavorites((prevFavorites) => {
-      if (prevFavorites.some((fav) => fav.cca2 === country.cca2)) {
+      console.log(prevFavorites);
+      if (prevFavorites.some((fav) => fav.cca2 == country.cca2)) {
         return prevFavorites.filter((fav) => fav.cca2 !== country.cca2);
       } else {
         return [...prevFavorites, country];
       }
     });
   };
-
-  console.log(favorites);
 
   return (
     <div className="home-wrapper">

@@ -11,7 +11,6 @@ import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 const SingleCountry = () => {
   const { name } = useParams();
   const context = useContext(Context);
-  const arrow = context.arrow;
 
   const [country, setCountry] = useState({});
   const [isLoading, setIsLoading] = useState(false);

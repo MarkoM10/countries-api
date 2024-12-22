@@ -15,7 +15,6 @@ const SearchFilter = () => {
       <input
         type="text"
         id="myInput"
-        onkeyup="myFunction()"
         placeholder="Pretraži državu..."
         onChange={(e) => getSearchTerm(e)}
       ></input>
