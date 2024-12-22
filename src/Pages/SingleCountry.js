@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Context from "../Components/Context";
 import "../Styles/CountryInfo.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +9,6 @@ import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 const SingleCountry = () => {
   const { name } = useParams();
-  const context = useContext(Context);
 
   const [country, setCountry] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +42,11 @@ const SingleCountry = () => {
               </Link>
             </div>
             <div className="img-box">
-              <img className="country-info-img" src={country.flags.svg} />
+              <img
+                className="country-info-img"
+                src={country.flags.svg}
+                alt="country info img"
+              />
             </div>
           </div>
           <div className="country-info-grid">

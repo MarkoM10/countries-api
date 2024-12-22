@@ -20,7 +20,7 @@ const Home = () => {
   const region = context.region;
   const searchTerm = context.searchTerm;
   const [isLoading, setIsLoading] = useState(false);
-  let REGION_URL = "https://restcountries.com/v3.1";
+
   const [currentPage, setCurrentPage] = useState(1);
   const countriesPerPage = 24;
 
@@ -59,9 +59,11 @@ const Home = () => {
 
   //Get request koji vraca listu drzava iz odabranih regiona u okviru regionFilter komponente
   useEffect(() => {
-    if (region != "all") {
-      REGION_URL = REGION_URL + "/region";
+    let REGION_URL = "https://restcountries.com/v3.1";
+    if (region !== "all") {
+      REGION_URL += "/region";
     }
+
     axios
       .get(`${REGION_URL}/${region}`)
       .then((res) => {
@@ -87,7 +89,7 @@ const Home = () => {
   const favoritesCountry = (country) => {
     setFavorites((prevFavorites) => {
       console.log(prevFavorites);
-      if (prevFavorites.some((fav) => fav.cca2 == country.cca2)) {
+      if (prevFavorites.some((fav) => fav.cca2 === country.cca2)) {
         return prevFavorites.filter((fav) => fav.cca2 !== country.cca2);
       } else {
         return [...prevFavorites, country];
@@ -118,7 +120,7 @@ const Home = () => {
                 className="country-img"
                 onClick={() => openCountryInfo(country.name.common)}
               >
-                <img src={country.flags.svg} />
+                <img src={country.flags.svg} alt="country flags svg" />
               </div>
               <div className="country-info">
                 <label>

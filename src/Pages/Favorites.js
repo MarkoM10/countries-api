@@ -32,7 +32,7 @@ export default function Favorites() {
               className="country-img"
               onClick={() => openCountryInfo(country.name.common)}
             >
-              <img src={country.flags.svg} />
+              <img src={country.flags.svg} alt="country flags img" />
             </div>
             <div className="country-info">
               <label>

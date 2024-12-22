@@ -2,12 +2,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
 import SingleCountry from "./Pages/SingleCountry";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Context from "./Components/Context";
 import leftArrow from "../src/Images/left-arrow.png";
@@ -23,7 +18,7 @@ function App() {
 
   return (
     <div className={theme}>
-      <BrowserRouter>
+      <Router>
         <Context.Provider
           value={{
             searchTerm,
@@ -47,7 +42,7 @@ function App() {
             <Route path=":favorites" element={<Favorites />} />
           </Routes>
         </Context.Provider>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
