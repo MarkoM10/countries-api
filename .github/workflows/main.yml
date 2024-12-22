@@ -7,6 +7,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Clean npm cache and install dependencies
+        uses: npm ci
+          yarn install
+
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
