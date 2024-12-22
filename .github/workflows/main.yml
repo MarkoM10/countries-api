@@ -4,24 +4,17 @@ on: [push]
 jobs:
   install:
     runs-on: ubuntu-latest
-    env:
-      CI: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Clean npm cache and install dependencies
-        run: |
-          npm ci  # This installs your dependencies based on package-lock.json
-
-      - name: Build app (disable CI warnings)
-        run: npm run build
+      - name: Install modules
+        run: npm ci
 
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
-          project: ./site
           browser: chrome
-          build: npm run build --no-cache
+          headless: true
           start: npm start
           wait-on: "http://localhost:3000"
