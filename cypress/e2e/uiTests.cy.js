@@ -26,4 +26,14 @@ describe("UI related tests", () => {
         );
       });
   });
+
+  it("Dark mode switch", () => {
+    cy.get('[data-icon="moon"]').click();
+
+    cy.get(".main-wrapper-dark").should(
+      "have.css",
+      "background-color",
+      "rgb(25, 166, 120)"
+    );
+  });
 });
