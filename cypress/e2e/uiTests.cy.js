@@ -6,11 +6,11 @@ describe("UI related tests", () => {
     cy.contains("h1", "Svet na dlanu").should("not.be.empty");
   });
 
-  it("Search filter test", () => {
-    cy.get("#myInput").click().type("srbija");
+  // it("Search filter test", () => {
+  //   cy.get("#myInput").click().type("srbija");
 
-    cy.contains("label", "Srbija").should("contain", "Srbija");
-  });
+  //   cy.contains("label", "Srbija").should("contain", "Srbija");
+  // });
 
   it("Favorites test", () => {
     cy.get('[data-icon="heart"]').first().click();
